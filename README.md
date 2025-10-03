@@ -1,73 +1,80 @@
-# Welcome to your Lovable project
+# Exoplanet Discovery Platform
 
-## Project info
+An advanced 3D visualization platform for exoplanet discoveries from Kepler, K2, and TESS space telescope data. Integrates with ML classification models to display interactive planetary systems with support for binary stars.
 
-**URL**: https://lovable.dev/projects/2c84308a-2477-4cff-9c30-befa51cd7385
+## Features
 
-## How can I edit this code?
+- 🌍 **Interactive 3D Visualization** - Rotate, zoom, and explore exoplanetary systems
+- ⭐ **Binary Star Support** - Visualize planets orbiting binary star systems  
+- 🤖 **ML Model Integration** - Connect your Kepler/K2/TESS detection models
+- 📊 **Classification Analysis** - Display reasoning for planet vs false positive classifications
+- 🎨 **Cosmic UI Design** - Beautiful space-themed interface with custom CSS
+- 📱 **Responsive Design** - Works on desktop and mobile devices
 
-There are several ways of editing your application.
+## Quick Start
 
-**Use Lovable**
+### Installation
+```bash
+npm install
+```
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2c84308a-2477-4cff-9c30-befa51cd7385) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Development
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Build
+```bash
+npm run build
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Integration Guide
 
-**Use GitHub Codespaces**
+See [INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md) for detailed instructions on:
+- Folder structure
+- Integrating your ML model
+- API integration examples
+- Customizing 3D visualizations
+- Deployment instructions
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Tech Stack
 
-## What technologies are used for this project?
+- **React 18** - UI framework
+- **TypeScript** - Type safety
+- **Three.js** - 3D graphics
+- **React Three Fiber** - React renderer for Three.js
+- **React Router** - Routing
+- **Vite** - Build tool
 
-This project is built with:
+## Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+src/
+├── components/        # Reusable UI components
+├── pages/            # Page components (Index, Results)
+├── styles/           # Custom CSS styles
+├── types/            # TypeScript type definitions
+└── utils/            # Utility functions and API integration
+```
 
-## How can I deploy this project?
+## Model Output Format
 
-Simply open [Lovable](https://lovable.dev/projects/2c84308a-2477-4cff-9c30-befa51cd7385) and click on Share -> Publish.
+Your ML model should return JSON with these fields:
+- `is_planet` - Boolean classification
+- `confidence_score` - Classification confidence (0-100)
+- `planet_radius_earth` - Planet radius in Earth radii
+- `orbital_distance_au` - Orbit radius in AU
+- `is_binary_system` - Whether host is binary star
+- `evidence_factors` - Array of classification reasoning
+- See [INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md) for complete format
 
-## Can I connect a custom domain to my Lovable project?
+## Customization
 
-Yes, you can!
+All styling uses custom CSS (minimal Tailwind usage as requested). Edit:
+- `src/styles/exoplanet.css` - Component styles
+- `src/index.css` - Design system tokens
+- `src/components/ExoplanetVisualization.tsx` - 3D rendering
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+MIT

@@ -1,0 +1,21 @@
+{
+  "is_planet": true,
+  "confidence_score": 94.7,
+  "planet_radius_earth": 0.8,
+  "orbital_distance_au": 4.5,
+  "is_binary_system": true,
+  "telescope_data_source": "TESS Sector 14",
+  "detection_date": "2024-01-15",
+  "estimated_temperature_k": 285,
+  "host_star_classification": "G-type main sequence (Binary)",
+  "evidence_factors": [
+    "Consistent transit depth across multiple observations",
+    "No significant secondary eclipse detected",
+    "Transit duration matches theoretical predictions",
+    "Stellar variability ruled out through analysis",
+    "Centroid analysis confirms planetary nature"
+  ],
+  "suggested_planet_color": "#4facfe",
+  "primary_star_color": "#ffd93d",
+  "secondary_star_color": "#ff6b6b"
+}
