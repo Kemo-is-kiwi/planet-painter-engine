@@ -1,7 +1,13 @@
 // Type definitions for Exoplanet Discovery Platform
 
+export type FalsePositiveReason = 
+  | 'Transit-Like' 
+  | 'Stellar Eclipse' 
+  | 'Centroid Offset' 
+  | 'Ephemeris Match Indicates Contamination';
+
 export interface ExoplanetResult {
-  classification: 'planet' | 'false_positive';
+  classification: 'planet' | 'false_positive' | 'candidate';
   confidence: number;
   radius: number; // In Earth radii (R⊕)
   orbitRadius: number; // In Astronomical Units (AU)
@@ -14,6 +20,7 @@ export interface ExoplanetResult {
   discoveryDate: string; // ISO date string
   temperature: number; // In Kelvin
   hostStarType: string; // e.g., "G-type main sequence"
+  falsePositiveReasons?: FalsePositiveReason[]; // Present when classification is 'false_positive'
 }
 
 export interface ModelOutputPayload {
